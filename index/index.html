@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day, Meri Jaan!</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: rgba(249, 253, 6, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(20, 33, 214, 0.801);
+            max-width: 600px;
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            color: #c44569;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 4px 4px 8px rgb(255, 94, 0);
+        }
+
+        .heart {
+            font-size: 4rem;
+            color: #c44569;
+            text-align: center;
+            animation: pulse 1.5s infinite;
+            margin: 20px 0;
+        }
+
+        .message-content p {
+            font-size: 1.1rem;
+            color: #fd0303;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .quote {
+            font-style: italic;
+            color: #c44569;
+            text-align: center;
+            font-size: 1.2rem;
+            margin: 30px 0;
+        }
+
+        /* Scrolling Image Sections */
+        .scrolling-section {
+            position: fixed;
+            width: 25%;
+            height: 100vh;
+            top: 0;
+            overflow: hidden;
+        }
+
+        .left-scroll {
+            left: 0;
+        }
+
+        .right-scroll {
+            right: 0;
+        }
+
+        .scroll-container {
+            display: flex;
+            flex-direction: column;
+            animation: scroll 40s linear infinite;
+        }
+
+        .image-card {
+            width: 200px;
+            height: 250px;
+            margin: 20px;
+            perspective: 1000px;
+        }
+
+        .image-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+        }
+
+        .image-card:hover .image-card-inner,
+        .image-card.flipped .image-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .image-card-front,
+        .image-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+        }
+
+        .image-card-front {
+            background-color: #fff;
+        }
+
+        .image-card-front img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .image-card-back {
+            background-color: #c44569;
+            color: rgb(255, 255, 255);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            transform: rotateY(180deg);
+            padding: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes scroll {
+            0% { transform: translateY(100%); }
+            100% { transform: translateY(-100%); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        /* Button Style */
+        .play-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #c44569;
+            color: white;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .play-button:hover {
+            background-color: #ff6b6b;
+        }
+    </style>
+</head>
+<body>
+    <!-- Add the audio element but keep it hidden -->
+    <audio id="audio" preload="auto">
+        <source src="C:\Users\LENOVO\OneDrive\ドキュメント\valentine web page\Templates\videoplayback.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Left Scrolling Images -->
+    <div class="scrolling-section left-scroll">
+        <div class="scroll-container">
+            <div class="image-card" onclick="flipCard(this)">
+                <div class="image-card-inner">
+                    <div class="image-card-front">
+                        <img src="C:\Users\LENOVO\OneDrive\ドキュメント\valentine web page\Templates\IMG-20250206-WA0012.jpg" alt="Message 1">
+                    </div>
+                    <div class="image-card-back">
+                        <p>The day on which i left my camera reel shyness for you meri jaan, our special day💕</p>
+                    </div>
+                </div>
+            </div>
+            <div class="image-card" onclick="flipCard(this)">
+                <div class="image-card-inner">
+                    <div class="image-card-front">
+                        <img src="C:\Users\LENOVO\OneDrive\ドキュメント\valentine web page\Templates\IMG20241221083405.jpg" alt="Memory 2">
+                    </div>
+                    <div class="image-card-back">
+                        <p>"You are my sunshine, my world, my everything. I can't imagine a single day without you by my side. I'll always be here for you, through every storm and every sunset❤️."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="image-card" onclick="flipCard(this)">
+                <div class="image-card-inner">
+                    <div class="image-card-front">
+                        <img src="C:\Users\LENOVO\OneDrive\ドキュメント\valentine web page\Templates\IMG20241228191332.jpg" alt="Memory 3">
+                    </div>
+                    <div class="image-card-back">
+                        <p>"From the moment you came into my life, everything changed. I found peace, joy, and love in you. No matter what happens, I’m never letting you go, meri jaan😘."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="image-card" onclick="flipCard(this)">
+                <div class="image-card-inner">
+                    <div class="image-card-front">
+                        <img src="C:\Users\LENOVO\OneDrive\ドキュメント\valentine web page\Templates\IMG20241231150053.jpg" alt="Memory 4">
+                    </div>
+                    <div class="image-card-back">
+                        <p>"I don't need anything else as long as I have you. You are my home, my safe place, and my forever. I promise to hold you close and never let you down💕."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="image-card" onclick="flipCard(this)">
+                <div class="image-card-inner">
+                    <div class="image-card-front">
+                        <img src="C:\Users\LENOVO\OneDrive\ドキュメント\valentine web page\Templates\IMG20241231155014.jpg" alt="Memory 5">
+                    </div>
+                    <div class="image-card-back">
+                        <p>"With you, I’ve found my forever. I’ll cherish you, protect you, and love you with all my heart because you’re the best thing that’s ever happened to me😘."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Button to play the song (moved to the top) -->
+        <button class="play-button" onclick="playSong()">Play Song</button>
+
+        <h1>Happy Valentine's Day,<br>Meri Jaan!</h1>
+        
+        <div class="message-content">
+            <p>To the love of my life, Sneha,(My cutie my love of life ,Meri payari si jaan , My Everything)</p>
+            <p>Every moment with you feels magical, and I'm so lucky to have you by my side. I cherish our bond and the love we share. Thank you for being my support, my joy, and my everything. You are my forever Valentine.</p>
+            
+            <div class="heart">❤️</div>
+            
+            <p class="quote">"I loved you yesterday, I love you still,I Will love Everyday Meri jaan<br>I will always Love you meri jaan <br>Happy Valentine Day meri jaan ,From this moment till end end of my life I want you be  my valentine every Year meri jaan  ."</p>
+        </div>
+    </div>
+
+    <!-- Right Scrolling Images -->
+    <div class="scrolling-section right-scroll">
+        <div class="scroll-container">
+            <div class="image-card" onclick="flipCard(this)">
+                <div class="image-card-inner">
+                    <div class="image-card-front">
+                        <img src="C:\Users\LENOVO\OneDrive\ドキュメント\valentine web page\Templates\IMG20250106183212.jpg" alt="Memory 6">
+                    </div>
+                    <div class="image-card-back">
+                        <p>"Every time I see you smile, my heart skips a beat. You’re the love of my life, and I’ll never stop doing whatever it takes to make you feel loved, cared and respected meri jaan❤️ for."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="image-card" onclick="flipCard(this)">
+                <div class="image-card-inner">
+                    <div class="image-card-front">
+                        <img src="C:\Users\LENOVO\OneDrive\ドキュメント\valentine web page\Templates\IMG20250110075825.jpg" alt="Memory 7">
+                    </div>
+                    <div class="image-card-back">
+                        <p>"I love you more than words can describe, and I will never stop showing you how much you mean to me. You are my dream come true, and I’m here for you, always.jaan❤️"</p>
+                    </div>
+                </div>
+            </div>
+            <div class="image-card" onclick="flipCard(this)">
+                <div class="image-card-inner">
+                    <div class="image-card-front">
+                        <img src="C:\Users\LENOVO\OneDrive\ドキュメント\valentine web page\Templates\IMG20250203150417.jpg" alt="Memory 8">
+                    </div>
+                    <div class="image-card-back">
+                        <p>"You are my heart, my soul, and my entire world. I’ll always protect our love, and nothing will ever come between us. I’m yours forever, meri jaan.💕"</p>
+                    </div>
+                </div>
+            </div>
+            <div class="image-card" onclick="flipCard(this)">
+                <div class="image-card-inner">
+                    <div class="image-card-front">
+                        <img src="C:\Users\LENOVO\OneDrive\ドキュメント\valentine web page\Templates\IMG20250206113354.jpg" alt="Memory 9">
+                    </div>
+                    <div class="image-card-back">
+                        <p>"You are the most amazing girl in the world, and I’m so lucky to call you mine. I trust you with my heart, and I promise to love you faithfully for the rest of our lives.❤️"</p>
+                    </div>
+                </div>
+            </div>
+            <div class="image-card" onclick="flipCard(this)">
+                <div class="image-card-inner">
+                    <div class="image-card-front">
+                        <img src="C:\Users\LENOVO\OneDrive\ドキュメント\valentine web page\Templates\IMG20250208144144.jpg" alt="Memory 10">
+                    </div>
+                    <div class="image-card-back">
+                        <p>Meri Jaan After all the messages one promise which i always do to you are first girl i made my friend and you are the last meri jaan I LOVE YOU TOO MUCH MERI jaan❤️</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function flipCard(card) {
+            card.classList.toggle("flipped");
+        }
+
+        function playSong() {
+            var audio = document.getElementById("audio");
+            audio.play();
+        }
+    </script>
+</body>
+</html>
